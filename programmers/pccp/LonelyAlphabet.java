@@ -1,7 +1,6 @@
 // [PCCP 모의고사 1회 - 1번] 외톨이 알파벳
-// https://school.programmers.co.kr/tryouts (PCCP 모의고사)
-// Level: PCCP 모의고사
 // 알고리즘: HashMap, 문자열 그룹화
+package programmers.pccp;
 
 import java.util.*;
 
