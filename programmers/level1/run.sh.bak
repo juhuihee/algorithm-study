@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Usage: ./run.sh FileName (without .java)
+if [ -z "$1" ]; then
+  echo "Usage: $0 FileName (without .java)"
+  exit 1
+fi
+FILE="$1.java"
+if [ ! -f "$FILE" ]; then
+  echo "Source file not found: $FILE"
+  exit 1
+fi
+# Compile with UTF-8 and run
+javac -encoding UTF-8 "$FILE" || { echo "Compilation failed"; exit 1; }
+java "$1"

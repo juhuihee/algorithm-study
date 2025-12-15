@@ -1,0 +1,15 @@
+param(
+  [Parameter(Mandatory=$true)]
+  [string]$Name
+)
+# Usage: pwsh -File run.ps1 -Name FindPrimeNumber
+$src = "$Name.java"
+if (-not (Test-Path $src)) {
+  Write-Error "Source file not found: $src"
+  exit 1
+}
+# remove stale .class for that basename to avoid conflicts
+Get-ChildItem -Path "${Name}*.class" -ErrorAction SilentlyContinue | Remove-Item -Force -ErrorAction SilentlyContinue
+javac -encoding UTF-8 $src
+if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+java $Name
