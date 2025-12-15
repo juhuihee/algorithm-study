@@ -1,7 +1,5 @@
 // [PCCP 모의고사 1회 - 1번] 외톨이 알파벳
 // 알고리즘: HashMap, 문자열 그룹화
-package programmers.pccp;
-
 import java.util.*;
 
 public class LonelyAlphabet {
