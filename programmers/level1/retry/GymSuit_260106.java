@@ -23,7 +23,7 @@ public class GymSuit_260106 {
     Collections.sort(lostList);
     Collections.sort(reserveList);
 
-    for (int i = 0; i < n; i++) {
+    for (int i = 1; i < n; i++) {
       if (lostList.contains(i) && reserveList.contains(i)) {
         lostList.remove(Integer.valueOf(i));
         reserveList.remove(Integer.valueOf(i));
